@@ -25,19 +25,15 @@
 # - via easter egg question ("print_answers")
 # Bonus Objectives:
 
-# -ability to use script arguments when the magic eight ball is started to do bonus functionality above
-# - for example ruby magic_eight.RB add_answers
-# this would start your script but instead of running the regular way you would be prompted to add answers first
+# # # # # # # # # # -ability to use script arguments when the magic eight ball is started to do bonus functionality above
+# # # # # # # # # # - for example ruby magic_eight.RB add_answers
+# # # # # # # # # # this would start your script but instead of running the regular way you would be prompted to add answers first
 
 require_relative './answers'
 
 class Eight_Ball < Answers
-    attr_accessor :name, :question 
-    def initialize(name, question)
-        @name = name
-        @question = question
+    def initialize
         super()
-        generate_answer
     end
 
     def generate_answer
@@ -62,51 +58,24 @@ class Eight_Ball < Answers
         add_answer
         end
     end
-end
 
+    def get_user_input
+        puts "Please type your question below"
+        # question
+        handle_user_choice(question)
+    end
 
-def get_user_input
-    puts
-    puts "Please enter your first name:"
-    puts
-    name = gets.strip.to_s
-    puts
-    puts "If you would like to quit type 'QUIT'"
-    puts
-    puts
-    puts "#{name}, please type your question below."
-    puts
-    question = gets.strip.to_s.downcase
-    if question == 'quit'
-        puts "Goodbye..."
-        exit(0)
-    else
-        Eight_Ball.new(name, question)
+    def handle_user_choice
+        # case statement
     end
 end
 
-<<<<<<< Updated upstream
-=======
-def add_answer
-  puts
-  puts "Would you like to add an answer? (y/n)"
-  puts 
-  input = gets.strip.to_s.downcase
-  if input == "y" 
-      puts "What answer would you like to add?"
-      new_answer = gets.strip 
-      @answer << new_answer  
-  elsif input == "n"
-    # another_question
-  else
-    puts "Try again"
-    add_answer
-  end
-end
-
->>>>>>> Stashed changes
+#Eight_Ball.new.get_user_input
 
 
-
-
-get_user_input
+# case
+#     quit
+#     question (not in array)
+#     add_answers (call ability to add answers)
+#     print_answers (show all answers)
+#     reset_answers (reset all answers) array.clone
