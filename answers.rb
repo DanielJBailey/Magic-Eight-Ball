@@ -7,7 +7,7 @@ class Answers
         "Outcome looks bleak",
         "How dare you",
         "YoU DoN't sAy ThAt",
-        "11",
+        "Eleven",
         "Yes, no, maybe so"
         ]
     end
