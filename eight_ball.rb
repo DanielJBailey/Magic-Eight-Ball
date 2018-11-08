@@ -32,7 +32,7 @@
 require_relative './answers'
 
 class Eight_Ball < Answers
-    attr_accessor :name, :question
+    attr_accessor :name, :question 
     def initialize(name, question)
         @name = name
         @question = question
@@ -60,5 +60,23 @@ def get_user_input
         Eight_Ball.new(name, question)
     end
 end
+
+def add_answer
+  puts
+  puts "Would you like to add an answer? (y/n)"
+  puts 
+  input = gets.strip.to_s.downcase
+  if input == "y" 
+      puts "What answer would you like to add?"
+      new_answer = gets.strip 
+      @answer << new_answer  
+  elsif input == "n"
+    # ask for question
+  else
+    puts "Try again"
+    add_answer
+  end
+end
+
 
 get_user_input
