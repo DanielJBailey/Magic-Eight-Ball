@@ -37,6 +37,30 @@ class Eight_Ball < Answers
         @name = name
         @question = question
         super()
+        generate_answer
+    end
+
+    def generate_answer
+        puts
+        puts @answers.sample
+        puts
+    end
+
+    def add_answer
+        puts
+        puts "Would you like to add an answer? (y/n)"
+        puts 
+        input = gets.strip.to_s.downcase
+        if input == "y" 
+            puts "What answer would you like to add?"
+            new_answer = gets.strip 
+            @answer << new_answer  
+        elsif input == "n"
+        # ask for question
+        else
+        puts "Try again"
+        add_answer
+        end
     end
 end
 
@@ -59,23 +83,6 @@ def get_user_input
     else
         Eight_Ball.new(name, question)
     end
-end
-
-def add_answer
-  puts
-  puts "Would you like to add an answer? (y/n)"
-  puts 
-  input = gets.strip.to_s.downcase
-  if input == "y" 
-      puts "What answer would you like to add?"
-      new_answer = gets.strip 
-      @answer << new_answer  
-  elsif input == "n"
-    # ask for question
-  else
-    puts "Try again"
-    add_answer
-  end
 end
 
 
