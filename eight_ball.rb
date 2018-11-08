@@ -43,19 +43,15 @@ class Eight_Ball < Answers
     end
 
     def add_answer
-        puts
-        puts "Would you like to add an answer? (y/n)"
-        puts 
+        puts "*" * 40
+        puts  "Add answer to Magic Eightball"
         input = gets.strip.to_s.downcase
-        if input == "y" 
-            puts "What answer would you like to add?"
-            new_answer = gets.strip 
-            @answer << new_answer  
-        elsif input == "n"
-        # ask for question
-        else
-        puts "Try again"
-        add_answer
+        if @answers.include? input
+            then 
+                puts "Sorry no duplicates"
+                add_answer
+        else 
+            @answers << input  
         end 
     end
 
@@ -67,6 +63,14 @@ class Eight_Ball < Answers
 
     def handle_user_choice
         # case statement
+    end
+
+    def print_answer
+        puts
+        @answers.each_with_index do |answer, index|
+            puts "#{index+1}) #{answer}"
+        end
+        puts
     end
 end
 
