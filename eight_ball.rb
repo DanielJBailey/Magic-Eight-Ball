@@ -56,7 +56,7 @@ class Eight_Ball < Answers
         else
         puts "Try again"
         add_answer
-        end
+        end 
     end
 
     def get_user_input
