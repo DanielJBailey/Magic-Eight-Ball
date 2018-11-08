@@ -38,7 +38,6 @@ class Eight_Ball < Answers
         @question = question
         super()
     end
-    
 end
 
 
@@ -48,10 +47,18 @@ def get_user_input
     puts
     name = gets.strip.to_s
     puts
-    puts "#{name}, please type your question below."
-    question = gets.strip.to_s
+    puts "If you would like to quit type 'QUIT'"
     puts
-    Eight_Ball.new(name, question)
+    puts
+    puts "#{name}, please type your question below."
+    puts
+    question = gets.strip.to_s.downcase
+    if question == 'quit'
+        puts "Goodbye..."
+        exit(0)
+    else
+        Eight_Ball.new(name, question)
+    end
 end
 
 get_user_input
