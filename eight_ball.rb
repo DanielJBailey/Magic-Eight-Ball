@@ -28,3 +28,30 @@
 # -ability to use script arguments when the magic eight ball is started to do bonus functionality above
 # - for example ruby magic_eight.RB add_answers
 # this would start your script but instead of running the regular way you would be prompted to add answers first
+
+require_relative './answers'
+
+class Eight_Ball < Answers
+    attr_accessor :name, :question
+    def initialize(name, question)
+        @name = name
+        @question = question
+        super()
+    end
+    
+end
+
+
+def get_user_input
+    puts
+    puts "Please enter your first name:"
+    puts
+    name = gets.strip.to_s
+    puts
+    puts "#{name}, please type your question below."
+    question = gets.strip.to_s
+    puts
+    Eight_Ball.new(name, question)
+end
+
+get_user_input
