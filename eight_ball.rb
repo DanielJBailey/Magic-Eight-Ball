@@ -50,10 +50,10 @@ class Eight_Ball < Answers
     def add_answers
         puts
         puts "*" * 40
-        puts  "Add answer to Magic 8 Ball, or type 'quit' to leave."
+        puts  "Add answer to Magic 8 Ball, or type 'quit' to go back to start."
         puts
         input = gets.strip.to_s
-        if input.downcase == 'quit'
+        if input  == 'quit'
             get_user_input
         elsif @answers.include? input
             puts
@@ -68,7 +68,7 @@ class Eight_Ball < Answers
 
     def get_user_input
         puts
-        puts "Please type your question below, or type 'QUIT' to quit."
+        puts "Please type your question below, or type 'quit' to exit."
         puts
         question = gets.strip.to_s.downcase
         handle_user_input(question)
